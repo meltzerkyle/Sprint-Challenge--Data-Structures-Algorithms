@@ -1,3 +1,5 @@
+from collections import deque
+
 class BinarySearchTree:
   def __init__(self, value):
     self.value = value
@@ -6,28 +8,28 @@ class BinarySearchTree:
 
   def depth_first_for_each(self, cb):
     stack = []
-    # x = self.value
-    # if x:
-    #   if self.left:
-    #     self.depth_first_for_each(self.left)
-    #   if self.right:
-    #     self.depth_first_for_each(self.right)
-    # return lambda x: stack.append(x)   
-    if self.value is not None:
-      stack.append(self.value)
-      # return cb = lambda x: stack.append(x)
-      if self.left:
-        # stack.append(self.left.value)
-        # return lambda: self.left.depth_first_for_each(self.left)
-        return self.left.depth_first_for_each(lambda x: stack.append(x))
-      if self.right:
-        # stack.append(self.right.value)
-        # return lambda: self.right.depth_first_for_each(self.right)
-        return self.right.depth_first_for_each(lambda x: stack.append(x))
+    node = self
+    while stack or node:
+      if node:
+        stack.append(node)
+        cb(node.value)
+        node = node.left
+      else:
+        node = stack.pop()
+        node = node.right
+
+
+
 
 
   def breadth_first_for_each(self, cb):
-    return lambda x: x + n
+    queue = deque([self])
+
+    while queue:
+      node = queue.popleft()
+
+
+
 
   def insert(self, value):
     new_tree = BinarySearchTree(value)
