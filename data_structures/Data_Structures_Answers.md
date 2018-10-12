@@ -2,11 +2,19 @@ Add your answers to the questions below.
 
 1. What is the runtime complexity of your `depth_first_for_each` method?
 
+O(n), because you have to traverse all nodes.
+
 2. What is the space complexity of your `depth_first_for_each` function?
+
+O(n), because it uses a stack. 
 
 3. What is the runtime complexity of your `breadth_first_for_each` method?
 
+O(n), because you have to traverse all nodes.
+
 4. What is the space complexity of your `breadth_first_for_each` method?
+
+O(n), because it uses a queue. 
 
 5. What is the runtime complexity of your `heapsort` function?
 
