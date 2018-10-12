@@ -21,12 +21,18 @@ class BinarySearchTree:
 
 
 
-
   def breadth_first_for_each(self, cb):
-    queue = deque([self])
-
-    while queue:
-      node = queue.popleft()
+    queue = deque([])
+    node = self
+    while queue or node:
+      if node:
+        queue.append(node)
+        cb(node.value)
+        node = node.left
+      else: 
+        node = queue.popleft()
+        node = node.right
+ 
 
 
 
