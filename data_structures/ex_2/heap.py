@@ -1,10 +1,24 @@
 def heapsort(arr):
   heap = Heap()
-  sorted = []
+  # allocate array up front to save on memory realloc
+  sorted = [0 for _ in range(len(arr))]
   for value in arr:
     heap.insert(value)
   sorted = [heap.delete() for i in range(heap.get_size()) if heap.get_size() > 0]
   return sorted[::-1]
+
+  # Sean's implementation:
+  # heap = Heap()
+  # sorted = [0 for _ in range(len(arr))]
+
+  # for el in arr:
+  #   heap.insert(el)
+  
+  # for i in range(len(arr)):
+  #   sorted[i] = heap.delete()
+  
+  # sorted.reverse()
+  # return sorted
 
 
 
