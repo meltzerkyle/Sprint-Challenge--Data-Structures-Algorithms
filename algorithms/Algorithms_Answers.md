@@ -15,3 +15,4 @@ I.c) Similar to a recursive calculation of Fibonacci numbers, this algorithm is 
 
 II. For this problem, I would implement a binary tree structure for the algorithm such that we can cut our problem in half based on the outcome of dropping the egg from the middle floor of the building.  Depending if the egg breaks or not when dropped from the middle, we then look at the bottom half or top half of the building exclusively, and then drop from the middle again, dividing the problem in half again and again until we reach our solution. 
 
+<!-- binary search, no need for the tree but I had the right idea -->
