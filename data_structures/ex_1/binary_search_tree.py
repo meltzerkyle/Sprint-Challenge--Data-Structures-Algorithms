@@ -18,24 +18,49 @@ class BinarySearchTree:
         node = stack.pop()
         node = node.right
 
+  # recursive solution
+    # cb(self.value)
+    # if self.left:
+    #   self.left.depth_first_for_each(cb)
+    # if self.rightL
+    #   self.right.depth_first_for_each(cb)
 
+# iterative solution
+  # stack = []
+  # stack.append(self)
+  # while len(stack):
+  #   current_node = stack.pop()
+  #   if current_node.right:
+  #     stack.append(current_node.right)
+  #   if current_node.left:
+  #     stack.append(current_node.left)
+  #   cb(current_node.value)
 
 
   def breadth_first_for_each(self, cb):
-    queue = deque([])
-    node = self
-    while queue or node:
-      if node:
-        queue.append(node)
-        cb(node.value)
-        node = node.left
-      else: 
-        node = queue.popleft()
-        node = node.right
- 
+    # my non-working semi-solution
+    # queue = deque([])
+    # node = self
+    # while queue or node:
+    #   if node:
+    #     queue.append(node)
+    #     cb(node.value)
+    #     node = node.left
+    #   else: 
+    #     node = queue.popleft()
+    #     node = node.right
 
+  # iterative solution
+    queue = []
+    queue.append(self)
 
-
+    while len(queue):
+      current_node = queue.pop(0)
+      if current_node.left:
+        queue.append(current_node.left)
+      if current_node.right:
+        queue.append(current_node.right)
+      cb(current_node.value)
 
   def insert(self, value):
     new_tree = BinarySearchTree(value)
