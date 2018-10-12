@@ -9,7 +9,7 @@ I.b) The running time for this would be 0(n^4), because the time complexity grow
 
 I.c) Similar to a recursive calculation of Fibonacci numbers, this algorithm is O(2^n), because this algorithm will double with each new element in the input data.
 
-<!-- actually shoudl be O(n) -->
+<!-- actually shoudl be O(n) bc it doesnt call function twice in return statement like fibonacci-->
 
 
 
